@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.videogames.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_videogameFragment"
+            app:destination="@id/videogameFragment" />
+        <action
+            android:id="@+id/action_login_to_registerUser"
+            app:destination="@id/registerUserFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/videogameFragment"
+        android:name="com.example.videogames.VideogameFragment"
+        android:label="fragment_videogame"
+        tools:layout="@layout/fragment_videogame">
+        <action
+            android:id="@+id/action_videogameFragment_to_gameDetailFragment"
+            app:popUpTo="@+id/gameDetailFramgnet"/>
+        <action
+            android:id="@+id/action_videogameFragment_to_addGameFragment"
+            app:destination="@+id/addGameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/gameDetailFramgnet"
+        android:name="com.example.videogames.GameDetailFragment"
+        android:label="fragment_gameDetail"
+        tools:layout="@layout/fragment_game_detail">
+    </fragment>
+
+    <fragment
+        android:id="@+id/addGameFragment"
+        android:name="com.example.videogames.AddGameFragment"
+        android:label="fragment_addGame"
+        tools:layout="@layout/fragment_add_game">
+        <action
+            android:id="@+id/action_addGameFragment_to_videogameFragment"
+            app:destination="@id/videogameFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerUserFragment"
+        android:name="com.example.videogames.RegisterUserFragment"
+        android:label="fragment_registerUser"
+        tools:layout="@layout/fragment_register_user" >
+        <action
+            android:id="@+id/action_registerUser_to_login"
+            app:destination="@id/loginFragment"/>
+    </fragment>
+</navigation>

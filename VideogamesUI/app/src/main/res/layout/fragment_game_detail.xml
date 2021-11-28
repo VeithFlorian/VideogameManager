@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:columnCount="3"
+    android:orientation="vertical"
+    android:layout_margin="@dimen/margin_small"
+    tools:context=".GameDetailFragment">
+
+    <TableRow
+        android:layout_columnSpan="3"
+        android:layout_width="match_parent">
+        <TextView
+            android:id="@+id/textViewGameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="Minecraft"
+            android:textAlignment="center"
+            android:textSize="@dimen/text_big" />
+    </TableRow>
+
+    <TableRow
+        android:layout_columnSpan="3"
+        android:layout_width="match_parent">
+        <ImageView
+            android:id="@+id/imageViewGameImage"
+            android:layout_width="match_parent"
+            android:layout_height="256dp"
+            android:src="@drawable/ic_launcher_background"
+            android:layout_marginVertical="@dimen/margin_small"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_columnSpan="3"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_horizontal">
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:isIndicator="true"
+            android:numStars="5"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_Genres"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_medium"/>
+        <TextView
+            android:id="@+id/textViewGenres"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="Action, Adventure"
+            android:layout_weight="0.35"
+            android:textSize="@dimen/font_medium"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_Platforms"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_medium"/>
+        <TextView
+            android:id="@+id/textViewPlatforms"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="PC, Xbox, Playstation"
+            android:layout_weight="0.35"
+            android:textSize="@dimen/font_medium"/>
+    </TableRow>
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/text_Metacritic"
+            android:layout_weight="1"
+            android:textSize="@dimen/font_medium"/>
+        <TextView
+            android:id="@+id/ratingMetacritic"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:text="99"
+            android:layout_weight="0.35"
+            android:textSize="@dimen/font_medium"/>
+    </TableRow>
+</GridLayout>
