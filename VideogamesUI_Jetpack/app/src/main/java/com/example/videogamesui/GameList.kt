@@ -5,6 +5,7 @@ import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.animation.ExperimentalAnimationApi
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -22,6 +23,7 @@ import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.runtime.*
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.ui.AbsoluteAlignment
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Alignment.Companion.Center
 import androidx.compose.ui.Alignment.Companion.CenterVertically
@@ -88,12 +90,15 @@ fun GameList(navController: NavController, gameList: SnapshotStateList<Videogame
                 items(gameListFiltered) {
                     Row(
                         horizontalArrangement = Arrangement.SpaceBetween,
-                        modifier = Modifier.fillMaxWidth()
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(48.dp)
                     ) {
-                        Box(modifier = Modifier
+                        Box(contentAlignment = AbsoluteAlignment.CenterLeft,
+                            modifier = Modifier
                             .align(CenterVertically)
                             .weight(1f)
-                            .padding(8.dp)
+                            .fillParentMaxHeight()
                             .clickable {
                                 val index = gameListFiltered.indexOf(it)
                                 navController.navigate("gameDetail/${index}")
@@ -101,7 +106,7 @@ fun GameList(navController: NavController, gameList: SnapshotStateList<Videogame
                         ) {
                             Text(
                                 it.name,
-                                fontSize = 18.sp,
+                                fontSize = 18.sp
                             )
                         }
                         IconButton(
